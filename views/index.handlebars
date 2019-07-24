@@ -1,0 +1,24 @@
+{{>header}}
+<div id="articles">
+    {{#each article}}
+    <div class="row">
+        <div class="col-10 offset-1 articleTitle">
+            <p id="{{this._id}}">
+                <a data="{{this._id}}" href="{{this.link}}">
+                    <h5 class="titleFont">{{this.title}}</h5>
+                </a>
+                <form method="GET" action="/scrape">
+                    <button class="btn-large blue waves-effect right" id="addNote" data="{{this._id}}"
+                        style="margin-right:10px;">Note</button>
+                </form>
+            </p>
+        </div>
+        <div class="col-10 offset-1 articleBody">
+            <p data="{{this._id}}">{{this.summary}}</p>
+        </div>
+        <div class="col-10 offset-1 notes">
+            <div id="notes"></div>
+        </div>
+    </div>
+    {{/each}}
+</div>
