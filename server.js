@@ -9,7 +9,7 @@ var axios = require("axios");
 var cheerio = require("cheerio");
 
 // Port Declaration
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Configure Middleware
 app.use(express.static("public"));
